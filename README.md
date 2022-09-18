@@ -1,5 +1,10 @@
-# MySQLOptimization
+# MySQLOptimization 
 
+## 1. Run container 
+`docker-compose up` 
+
+# 2. Create db and give permissions
+```
 docker-compose exec mysql sh
 mysql -uroot -p
 my_password
@@ -9,6 +14,8 @@ CREATE USER 'my_user'@'%' IDENTIFIED WITH mysql_native_password BY 'my_password'
 USE my_db;
 GRANT ALL PRIVILEGES ON * TO 'my_user'@'%';
 FLUSH PRIVILEGES;
+```
+
 
 #conda deactivate
 #conda env remove --name mysqlperfomance
