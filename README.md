@@ -38,9 +38,9 @@ python addusers.py
 
 
 ## 5. Uncomment line with creating indexes in file addusers.py and run creating 40M users
-#ctq = "CREATE INDEX Users_Birthday_BTREE USING BTREE ON Users (Birthday ASC);"
-#ctq = "CREATE INDEX Users_Birthday_HASH USING HASH ON Users (Birthday);"
-#result = conn.execute(ctq)
+#ctq = "CREATE INDEX Users_Birthday_BTREE USING BTREE ON Users (Birthday ASC);" 
+#ctq = "CREATE INDEX Users_Birthday_HASH USING HASH ON Users (Birthday);" 
+#result = conn.execute(ctq) 
     
 `python addusers.py` 
 
