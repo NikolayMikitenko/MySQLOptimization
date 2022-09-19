@@ -37,6 +37,19 @@ python addusers.py
  0 | 0:00:07.734345 | 0:00:07.753723 | 0:00:07.761428 |
 
 
-## 5. 
-CREATE INDEX Users_Birthday_BTREE USING BTREE ON Users (Birthday ASC);
-CREATE INDEX Users_Birthday_HASH USING HASH ON Users (Birthday);
+## 5. Uncomment line with creating indexes in file addusers.py and run creating 40M users
+#ctq = "CREATE INDEX Users_Birthday_BTREE USING BTREE ON Users (Birthday ASC);"
+#ctq = "CREATE INDEX Users_Birthday_HASH USING HASH ON Users (Birthday);"
+#result = conn.execute(ctq)
+    
+`python addusers.py` 
+
+ Index | Select query duration |
+ --- | --- |
+ Without | 27,950s |
+ BETREE | 22ms |
+ HASH | 19ms |
+
+![WithoutIndex](https://user-images.githubusercontent.com/52753625/190976585-e76ad0e1-08e6-43ef-98b6-70c0bf1c4549.PNG)
+![WithBeTreeIndex](https://user-images.githubusercontent.com/52753625/190976627-9caf9c91-b3b2-47f3-b1ec-a9903943af33.PNG)
+![WithHashIndex](https://user-images.githubusercontent.com/52753625/190976646-73e7e26a-a1f6-42b5-bf18-6f5b970eae3a.PNG)
